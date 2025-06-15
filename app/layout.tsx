@@ -1,6 +1,10 @@
+import React from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./lib/ThemeContext";
+import { PortfolioProvider } from "./lib/PortfolioContext";
+import { Navigation } from "./components/ui/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="min-h-screen bg-background">
-          {children}
-        </main>
+        <ThemeProvider>
+          <PortfolioProvider>
+            <Navigation />
+            <main className="min-h-screen bg-background">
+              {children}
+            </main>
+          </PortfolioProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
