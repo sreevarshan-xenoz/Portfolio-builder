@@ -1,6 +1,4 @@
 import React from 'react';
-import { Footer } from './components/ui/Footer';
-import { Navigation } from './components/ui/Navigation';
 import { MotionDiv } from './components/ui/MotionDiv';
 import { MotionA } from './components/ui/MotionA';
 import { MotionImg } from './components/ui/MotionImg';
@@ -36,7 +34,6 @@ const logos = [
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Navigation />
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 px-4 pt-16 pb-8 bg-gradient-to-b from-background to-muted">
         <MotionDiv
@@ -181,8 +178,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 } 
