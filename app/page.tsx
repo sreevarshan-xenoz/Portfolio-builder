@@ -1,7 +1,4 @@
 import React from 'react';
-import { MotionDiv } from './components/ui/MotionDiv';
-import { MotionA } from './components/ui/MotionA';
-import { MotionImg } from './components/ui/MotionImg';
 
 const testimonials = [
   {
@@ -36,12 +33,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center flex-1 px-4 pt-16 pb-8 bg-gradient-to-b from-background to-muted">
-        <MotionDiv
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl w-full text-center space-y-6"
-        >
+        <div className="max-w-4xl w-full text-center space-y-6 transition-all duration-700">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
             <span className="block">Flexfolio</span>
             <span className="block text-primary mt-2">Drag & Drop Portfolio Builder</span>
@@ -50,36 +42,27 @@ export default function Home() {
             Create beautiful portfolios in minutes with our drag-and-drop builder. No coding required.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <MotionA
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            <a
               href="/builder"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 shadow-lg transition-all"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
             >
               Get Started
-            </MotionA>
-            <MotionA
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            </a>
+            <a
               href="/templates"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-secondary hover:bg-secondary/90 shadow-lg transition-all"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-secondary hover:bg-secondary/90 shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
             >
               View Templates
-            </MotionA>
+            </a>
           </div>
-        </MotionDiv>
+        </div>
         {/* Portfolio Preview Mockup */}
-        <MotionDiv
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-          className="mt-12 w-full flex justify-center"
-        >
+        <div className="mt-12 w-full flex justify-center transition-all duration-700">
           <div className="relative w-full max-w-2xl h-64 bg-card rounded-xl shadow-2xl overflow-hidden border border-border flex items-center justify-center">
             {/* Replace this with a real animated preview later */}
             <span className="text-muted-foreground text-lg">[ Portfolio Preview Animation Here ]</span>
           </div>
-        </MotionDiv>
+        </div>
       </section>
 
       {/* Trusted By Section */}
@@ -88,14 +71,11 @@ export default function Home() {
           <span className="uppercase text-xs text-muted-foreground tracking-widest mb-4">Trusted by creators at</span>
           <div className="flex flex-wrap justify-center gap-8">
             {logos.map((logo, i) => (
-              <MotionImg
+              <img
                 key={i}
                 src={logo}
                 alt="Logo"
                 className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * i, duration: 0.5 }}
               />
             ))}
           </div>
@@ -107,9 +87,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <MotionDiv
-              whileHover={{ y: -8, scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}
-              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all cursor-pointer"
+            <div
+              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all duration-200 cursor-pointer hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
             >
               <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,11 +99,10 @@ export default function Home() {
               <p className="mt-2 text-sm text-muted-foreground text-center">
                 Easily arrange your portfolio sections with our intuitive drag-and-drop interface.
               </p>
-            </MotionDiv>
+            </div>
             {/* Feature 2 */}
-            <MotionDiv
-              whileHover={{ y: -8, scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}
-              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all cursor-pointer"
+            <div
+              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all duration-200 cursor-pointer hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
             >
               <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,11 +113,10 @@ export default function Home() {
               <p className="mt-2 text-sm text-muted-foreground text-center">
                 Choose from a variety of professionally designed templates to showcase your work.
               </p>
-            </MotionDiv>
+            </div>
             {/* Feature 3 */}
-            <MotionDiv
-              whileHover={{ y: -8, scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}
-              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all cursor-pointer"
+            <div
+              className="flex flex-col items-center p-8 bg-card rounded-lg shadow-sm transition-all duration-200 cursor-pointer hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
             >
               <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -150,7 +127,7 @@ export default function Home() {
               <p className="mt-2 text-sm text-muted-foreground text-center">
                 Publish your portfolio to the web with a single click using Vercel.
               </p>
-            </MotionDiv>
+            </div>
           </div>
         </div>
       </section>
@@ -161,19 +138,15 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-center mb-10">What our users say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <MotionDiv
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i, duration: 0.6 }}
-                className="bg-card rounded-lg p-6 shadow-md flex flex-col items-center hover:shadow-xl transition-all"
+                className="bg-card rounded-lg p-6 shadow-md flex flex-col items-center hover:shadow-xl transition-all duration-200 group"
               >
-                <img src={t.avatar} alt={t.name} className="w-14 h-14 rounded-full mb-4 border-2 border-primary" />
+                <img src={t.avatar} alt={t.name} className="w-14 h-14 rounded-full mb-4 border-2 border-primary group-hover:scale-110 transition-transform duration-200" />
                 <p className="text-muted-foreground text-center mb-3">"{t.text}"</p>
                 <span className="font-semibold text-foreground">{t.name}</span>
                 <span className="text-xs text-muted-foreground">{t.role}</span>
-              </MotionDiv>
+              </div>
             ))}
           </div>
         </div>
